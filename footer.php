@@ -8,12 +8,12 @@
  *
  * @package WordPress
  * @subpackage Twenty_Twenty_One
- * @since 1.0.0
+ * @since Twenty Twenty-One 1.0
  */
 
 ?>
 			</main><!-- #main -->
-		</section><!-- #primary -->
+		</div><!-- #primary -->
 	</div><!-- #content -->
 
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
@@ -58,7 +58,7 @@
 				printf(
 					/* translators: %s: WordPress. */
 					esc_html__( 'Proudly powered by %s.', 'twentytwentyone' ),
-					'<a href="' . esc_attr__( 'https://wordpress.org/', 'twentytwentyone' ) . '">WordPress</a>'
+					'<a href="' . esc_url( __( 'https://wordpress.org/', 'twentytwentyone' ) ) . '">WordPress</a>'
 				);
 				?>
 			</div><!-- .powered-by -->
@@ -72,3 +72,8 @@
 
 </body>
 </html>
+<?php
+
+if ( !is_front_page() && is_home() ) {
+  	echo "<p>It is post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>";
+}
